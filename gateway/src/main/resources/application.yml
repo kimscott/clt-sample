@@ -1,0 +1,48 @@
+
+server:
+  port: 8080
+
+---
+spring:
+  profiles: default
+  cloud:
+    gateway:
+      routes:
+        - id: market
+          uri: http://localhost:8081
+          predicates:
+            - Path=/market/**
+        - id: product
+          uri: http://localhost:8082
+          predicates:
+            - Path=/product/**
+        - id: inventories
+          uri: http://localhost:8083
+          predicates:
+            - Path=/inventories/**
+        - id: finance
+          uri: http://localhost:8084
+          predicates:
+            - Path=/budget*/**
+#        - id: trade
+#          uri: http://localhost:8085
+#          predicates:
+#            - Path=/trades/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+
+---
+spring:
+  profiles: docker
+
+server:
+  port: 8080
