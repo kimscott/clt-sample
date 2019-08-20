@@ -27,7 +27,7 @@ public class ProductService {
     String gatewayUrl;
 
 
-    public void slotOffer(){
+    public void slotOffer(String username, Long offerId){
 
         String inventoryUrl = "/inventories";
         String financeUrl = "/budgets";
@@ -46,8 +46,8 @@ public class ProductService {
 
         SlotOffered slotOffered = new SlotOffered();
         slotOffered.setEventType(SlotOffered.class.getSimpleName());
-        slotOffered.setName("test");
-        slotOffered.setOfferId(100L);
+        slotOffered.setName(username);
+        slotOffered.setOfferId(offerId);
         this.sendTopic(topicName, slotOffered);
     }
 

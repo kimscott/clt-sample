@@ -1,5 +1,6 @@
 package com.example.template;
 
+import com.example.template.sse.SseBaseMessageHandler;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -18,6 +19,9 @@ public class MarketService {
 
     @Autowired
     private KafkaTemplate kafkaTemplate;
+
+    @Autowired
+    private SseBaseMessageHandler messageHandler;
 
     /**
      *
@@ -41,6 +45,8 @@ public class MarketService {
 
                 System.out.println("OfferSimulated 이벤트 수신!!!!!!!!!");
                 System.out.println(message);
+
+                this.messageHandler.publish(offerSimulated.getName(), offerSimulated.getOfferId(), message);
             }
         } catch (
                 IOException e) {
@@ -60,6 +66,7 @@ public class MarketService {
 
                 System.out.println("OfferTaken 이벤트 수신!!!!!!!!!");
                 System.out.println(message);
+                this.messageHandler.publish(offerTaken.getName(), offerTaken.getOfferId(), message);
             }
         } catch (
                 IOException e) {

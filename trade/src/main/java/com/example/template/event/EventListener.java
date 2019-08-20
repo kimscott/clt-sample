@@ -36,12 +36,14 @@ public class EventListener {
 
                 OfferTaken offerTaken = new OfferTaken();
                 offerTaken.setEventType(OfferTaken.class.getSimpleName());
-                offerTaken.setName("OfferTaken");
+                offerTaken.setName(slotOffered.getName());
+                offerTaken.setOfferId(slotOffered.getOfferId());
                 this.sendTopic(topicName, offerTaken);
 
                 OfferSimulated offerSimulated = new OfferSimulated();
                 offerSimulated.setEventType(OfferSimulated.class.getSimpleName());
-                offerSimulated.setName("OfferSimulated");
+                offerSimulated.setName(slotOffered.getName());
+                offerSimulated.setOfferId(slotOffered.getOfferId());
                 this.sendTopic(topicName, offerSimulated);
             }
         } catch (
