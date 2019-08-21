@@ -1,8 +1,8 @@
-package com.example.template.event;
+package com.example.template;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AbstractEvent {
 
     String eventType;
@@ -17,9 +17,6 @@ public class AbstractEvent {
     }
 
     public String getTimestamp() {
-        SimpleDateFormat defaultSimpleDateFormat = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss.SSS");
-        Date now = new Date();
-        timestamp = defaultSimpleDateFormat.format(now);
         return timestamp;
     }
 

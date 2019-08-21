@@ -1,6 +1,8 @@
 package com.example.template.event;
 
-public class OfferTaken  extends AbstractEvent{
+import com.example.template.AbstractEvent;
+
+public class OfferTaken  extends AbstractEvent {
 
     String name;
     Long offerId;

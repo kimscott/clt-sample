@@ -45,6 +45,13 @@
 			<scope>compile</scope>
 		</dependency>
 
+		<!-- shared library 사용 nexus 추가시 추가작업이 필요함-->
+		<dependency>
+			<groupId>com.example</groupId>
+			<artifactId>multi-module-library</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<dependencyManagement>
