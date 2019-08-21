@@ -5,6 +5,11 @@ server:
 ---
 spring:
   profiles: default
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8080/.well-known/jwks.json
   cloud:
     gateway:
       routes:
@@ -24,10 +29,6 @@ spring:
           uri: http://localhost:8084
           predicates:
             - Path=/budget*/**
-#        - id: trade
-#          uri: http://localhost:8085
-#          predicates:
-#            - Path=/trades/**
       globalcors:
         corsConfigurations:
           '[/**]':

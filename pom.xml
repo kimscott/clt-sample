@@ -16,5 +16,6 @@
         <module>product</module>
         <module>trade</module>
         <module>gateway</module>
+        <module>oauth</module>
     </modules>
 </project>

@@ -23,8 +23,12 @@ public class ProductService {
     @Value("${topic.topicName}")
     String topicName;
 
-    @Value("${gatewayUrl}")
-    String gatewayUrl;
+    // url 관리를 properties 파일에서 하지 않고, 별도의 api 관리서버가 있다면 해당 서버에서 조회하는 것도 좋은 방법입니다.
+    @Value("${inventoryUrl}")
+    String inventoryUrl;
+
+    @Value("${financeUrl}")
+    String financeUrl;
 
 
     public void slotOffer(String username, Long offerId){
@@ -33,12 +37,12 @@ public class ProductService {
         String financeUrl = "/budgets";
 
         // 1. checkInventory
-        ResponseEntity<String> inventoryEntity = restTemplate.getForEntity(this.gatewayUrl + inventoryUrl, String.class);
+        ResponseEntity<String> inventoryEntity = restTemplate.getForEntity(inventoryUrl, String.class);
         System.out.println(inventoryEntity.getStatusCode());
         System.out.println(inventoryEntity.getBody());
 
         // 2. Check budget
-        ResponseEntity<String> financeEntity = restTemplate.getForEntity(this.gatewayUrl + financeUrl, String.class);
+        ResponseEntity<String> financeEntity = restTemplate.getForEntity(financeUrl, String.class);
         System.out.println(financeEntity.getStatusCode());
         System.out.println(financeEntity.getBody());
 

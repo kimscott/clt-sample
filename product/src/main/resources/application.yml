@@ -5,7 +5,6 @@ server:
 topic:
   topicName: topic
 
-gatewayUrl: http://localhost:8080
 ---
 spring:
   profiles: default
@@ -27,6 +26,9 @@ logging:
 
 server:
   port: 8082
+
+inventoryUrl: http://localhost:8083
+financeUrl: http://localhost:8084
 ---
 spring:
   profiles: docker
@@ -34,3 +36,6 @@ spring:
     bootstrap-servers: my-kafka.kafka.svc.cluster.local:9092
     consumer:
       enable-auto-commit: true
+
+inventoryUrl: http://inventory:8080
+financeUrl: http://finance:8080
