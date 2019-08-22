@@ -33,7 +33,7 @@ public class MarketService {
         return offers;
     }
 
-    @KafkaListener(topics = "${topic.topicName}", groupId = "OfferSimulated")
+    @KafkaListener(topics = "${topic.topicName}", groupId = "offerSimulated")
     public void onMessageSimulated(@Payload String message, ConsumerRecord<?, ?> consumerRecord) {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -54,7 +54,7 @@ public class MarketService {
         }
     }
 
-    @KafkaListener(topics = "${topic.topicName}", groupId = "OfferSimulated")
+    @KafkaListener(topics = "${topic.topicName}", groupId = "offerTaken")
     public void onMessageTaken(@Payload String message, ConsumerRecord<?, ?> consumerRecord) {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);

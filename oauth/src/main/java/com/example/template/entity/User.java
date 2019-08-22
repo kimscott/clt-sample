@@ -22,8 +22,6 @@ import lombok.ToString;
 @Table(name = "user")
 public class User implements UserDetails{
 
-	private static final long serialVersionUID = -3699911426704150861L;
-
 	@Id
 	@Getter@Setter
 	private Long id;

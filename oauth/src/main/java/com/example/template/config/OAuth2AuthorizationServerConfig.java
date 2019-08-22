@@ -1,5 +1,7 @@
 package com.example.template.config;
 
+import com.example.template.entity.User;
+import com.example.template.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -51,6 +53,8 @@ public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigur
 
 	@Autowired
 	PasswordEncoder passwordEncoder;
+	@Autowired
+	UserRepository userRepository;
 
 	@Autowired
 	private Environment env;
@@ -162,8 +166,7 @@ public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigur
             if(authentication.isAuthenticated()) {
                 Map<String, Object> additionalInfo = new HashMap<>();
                 additionalInfo.put("company", "CLT");
-
-                String clientId = authentication.getOAuth2Request().getClientId();
+//                String clientId = authentication.getOAuth2Request().getClientId();
 //                logger.debug("client ID : " + clientId);
 
 //                ClientDetails client = clientService.loadClientByClientId(clientId);

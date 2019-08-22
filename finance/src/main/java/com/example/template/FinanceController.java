@@ -25,8 +25,12 @@ public class FinanceController {
      */
     @RequestMapping(value = "/check/{name}", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
     public List<Budget> checkBudget(HttpServletRequest request, HttpServletResponse response,
-                                    @PathVariable(value = "name") String name
+                                    @PathVariable(value = "name") String name,
+                                    UserDetail userDetail
     ) throws Exception {
+
+        System.out.println(userDetail.getUsername());
+        System.out.println(userDetail.getCompany());
         return this.financeService.checkBudget(name);
     }
 

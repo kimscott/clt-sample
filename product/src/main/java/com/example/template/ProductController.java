@@ -17,6 +17,7 @@ public class ProductController {
      * @param request
      * @param response
      * @return
+     * /product/slotOffer/3?username=aa
      * @throws Exception
      */
     @RequestMapping(value = "/slotOffer/{offerId}", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")

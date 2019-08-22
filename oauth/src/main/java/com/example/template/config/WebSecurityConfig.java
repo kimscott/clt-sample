@@ -89,11 +89,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		
 		http
 			.cors()
-			.and()
-		.authorizeRequests()
+		.and()
+			.authorizeRequests()
+				.antMatchers("/login").permitAll()
 			.requestMatchers(CorsUtils::isPreFlightRequest).permitAll()
 			.anyRequest().authenticated()
-		.and().csrf()
+		.and()
+				.csrf()
 			  .disable()
 		;
 	}
