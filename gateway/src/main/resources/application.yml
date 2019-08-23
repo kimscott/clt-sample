@@ -29,6 +29,10 @@ spring:
           uri: http://localhost:8084
           predicates:
             - Path=/budget*/**
+        - id: websocket
+          uri: http://localhost:8086
+          predicates:
+            - Path=/websocket/**
       globalcors:
         corsConfigurations:
           '[/**]':
