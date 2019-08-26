@@ -33,16 +33,16 @@ public class ProductService {
 
     public void slotOffer(String username, Long offerId){
 
-        String inventoryUrl = "/inventories";
-        String financeUrl = "/budgets";
+        String inventoryUrlPath = this.inventoryUrl + "/inventories";
+        String financeUrlPath = this.financeUrl + "/budgets";
 
         // 1. checkInventory
-        ResponseEntity<String> inventoryEntity = restTemplate.getForEntity(inventoryUrl, String.class);
+        ResponseEntity<String> inventoryEntity = restTemplate.getForEntity(inventoryUrlPath, String.class);
         System.out.println(inventoryEntity.getStatusCode());
         System.out.println(inventoryEntity.getBody());
 
         // 2. Check budget
-        ResponseEntity<String> financeEntity = restTemplate.getForEntity(financeUrl, String.class);
+        ResponseEntity<String> financeEntity = restTemplate.getForEntity(financeUrlPath, String.class);
         System.out.println(financeEntity.getStatusCode());
         System.out.println(financeEntity.getBody());
 
