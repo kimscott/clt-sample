@@ -5,11 +5,11 @@ server:
 ---
 spring:
   profiles: default
-#  security:
-#    oauth2:
-#      resourceserver:
-#        jwt:
-#          jwk-set-uri: http://localhost:8080/.well-known/jwks.json
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8080/.well-known/jwks.json
   cloud:
     gateway:
       routes:
@@ -33,6 +33,10 @@ spring:
           uri: http://localhost:8086
           predicates:
             - Path=/websocket/**
+        - id: oauth
+          uri: http://localhost:8090
+          predicates:
+            - Path=/oauth/**
       globalcors:
         corsConfigurations:
           '[/**]':

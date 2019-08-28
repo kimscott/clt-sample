@@ -29,4 +29,19 @@ public class ProductController {
         this.productService.slotOffer(username, offerId);
     }
 
+    /**
+     * @param request
+     * @param response
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/slotOffer", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
+    public String slotOfferTemp(HttpServletRequest request, HttpServletResponse response
+            , @RequestParam("username") String username
+
+    ) throws Exception {
+        return username;
+//        this.productService.slotOffer(username, offerId);
+    }
+
 }

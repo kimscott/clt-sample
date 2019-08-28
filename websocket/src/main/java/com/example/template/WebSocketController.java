@@ -13,6 +13,8 @@ import org.springframework.messaging.simp.annotation.SendToUser;
 import org.springframework.stereotype.Controller;
 
 import java.security.Principal;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -64,7 +66,7 @@ public class WebSocketController {
     public void onMessage(@Payload String message, ConsumerRecord<?, ?> consumerRecord) {
 
         System.out.println(message);
-        messagingTemplate.convertAndSendToUser("kook","/queue/reply",message);
+        messagingTemplate.convertAndSendToUser("kook", "/queue/reply", message);
     }
 
 

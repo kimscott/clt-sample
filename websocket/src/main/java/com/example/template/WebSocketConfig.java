@@ -35,7 +35,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry
                 .addEndpoint("/websocket")
-//                .setAllowedOrigins("*")
+                .setAllowedOrigins("*")
                 .setHandshakeHandler(new DefaultHandshakeHandler() {
 
                     public boolean beforeHandshake(
@@ -53,6 +53,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
                         }
                         return true;
                     }
-                }).withSockJS();
+                }).withSockJS()
+                .setSupressCors(true);
     }
 }
