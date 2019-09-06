@@ -1,6 +1,8 @@
 package com.example.template;
 
-public class Offers {
+import java.io.Serializable;
+
+public class Offers implements Serializable {
 
     Long id;
     String name;
