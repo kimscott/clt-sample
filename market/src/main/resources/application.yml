@@ -18,6 +18,20 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
+  redis:
+    host: localhost
+    port: 6379
+    lettuce:
+      pool:
+        max-active: 7
+        max-idle: 7
+        min-idle: 2
+#    password: secretpassword
+  cache:
+    redis:
+      cache-null-values: false
+      use-key-prefix: true
+    type: redis
 
 logging:
   level:
