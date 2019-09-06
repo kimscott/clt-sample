@@ -19,6 +19,9 @@
         <module>oauth</module>
         <module>websocket</module>
 
+        <module>kafkaSample</module>
+
+
         <module>library</module>
     </modules>
 </project>

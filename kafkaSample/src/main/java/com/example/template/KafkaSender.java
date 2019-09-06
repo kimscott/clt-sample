@@ -50,6 +50,9 @@ public class KafkaSender {
         }
         long end = System.currentTimeMillis();
         System.out.println("sendSync - during time : "+ (end-start));
+
+        producer.flush();
+        producer.close();
     }
 
     /**
@@ -58,8 +61,6 @@ public class KafkaSender {
      * org.apache.kafka.clients.producer.Callback
      *
      * 로그를 보면 main이 아닌 별도의 카프카 스레드에서 콜백을 호출한다.
-     *
-     * 콜백을 받는 방식인데... 이상하게 정상 작동을 안한다.
      */
     public static void sendAsync(String topicName) {
         long start = System.currentTimeMillis();
@@ -74,6 +75,9 @@ public class KafkaSender {
         }
         long end = System.currentTimeMillis();
         System.out.println("sendAsync() - during time : "+ (end-start));
+
+        producer.flush();
+        producer.close();
     }
 
 
