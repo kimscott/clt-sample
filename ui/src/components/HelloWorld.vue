@@ -100,8 +100,8 @@ export default {
   methods: {
     login: function () {
       var me = this
-      var clientID = 'uengine-client'
-      var clientSecret = 'uengine-secret'
+      var clientID = 'clt-client'
+      var clientSecret = 'clt-secret'
       const clientCredentialBase64 = btoa(clientID + ':' + clientSecret)
       //OAuth 인증을 위한 Body 설정
       const body = `grant_type=password&username=${encodeURIComponent(me.formData.username)}&password=` + encodeURIComponent(me.formData.password)

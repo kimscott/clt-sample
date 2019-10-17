@@ -34,8 +34,8 @@ import java.util.Map;
 @EnableAuthorizationServer
 public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
-	public static final String CLIENT_ID = "uengine-client";
-	public static final String CLIENT_SECRET = "uengine-secret";
+	public static final String CLIENT_ID = "clt-client";
+	public static final String CLIENT_SECRET = "clt-secret";
 	static final String GRANT_TYPE_PASSWORD = "password";
 	static final String AUTHORIZATION_CODE = "authorization_code";
 	static final String CLIENT_CREDENTIALS = "client_credentials";

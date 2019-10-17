@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: _PROJECT_NAME
+  labels:
+    app: _PROJECT_NAME
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: _PROJECT_NAME
+  template:
+    metadata:
+      labels:
+        app: _PROJECT_NAME
+    spec:
+      containers:
+        - name: _PROJECT_NAME
+          image: _REPOSITORY/_PROJECT_NAME:_VERSION
+          ports:
+            - containerPort: 8080

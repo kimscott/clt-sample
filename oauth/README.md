@@ -5,8 +5,8 @@
 http://localhost:8090/oauth/token
 
 Type : Basic Auth
-Username : uengine-client
-Password : uengine-secret
+Username : clt-client
+Password : clt-secret
 
 -- body 부분
 grant_type : password
@@ -18,7 +18,7 @@ password : password
 http --form POST localhost:8090/oauth/token \  
 "Authorization: Basic dWVuZ2luZS1jbGllbnQ6dWVuZ2luZS1zZWNyZXQ=" \  
 grant_type=password \  
-username=4@4.com \  
+username=1@clt.com \  
 password=password
 
 ## jks 파일 생성 방법

@@ -20,20 +20,20 @@ public class AuthorizationServerApplication implements CommandLineRunner {
 	}
 
 	// TODO 삭제 - 테스트로 유저를 넣어서 확인하는 코드입니다.
-//	@Autowired
-//	private UserRepository repository;
-//	@Autowired private PasswordEncoder passwordEncoder;
+	@Autowired
+	private UserRepository repository;
+	@Autowired private PasswordEncoder passwordEncoder;
 
 	@Override
 	public void run(String... args) throws Exception {
 
-//		User user = new User();
-//		user.setId(3l);
-//		user.setUsername("4@4.com");
-//		user.setPassword(passwordEncoder.encode("password"));
-//		user.setRole("USER_ADMIN");
-//
-//		repository.save(user);
+		User user = new User();
+		user.setId(1l);
+		user.setUsername("1@clt.com");
+		user.setPassword(passwordEncoder.encode("password"));
+		user.setRole("USER_ADMIN");
+
+		repository.save(user);
 
 	}
 
