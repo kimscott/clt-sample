@@ -8,7 +8,6 @@
 *.jar
 *.sw?
 *~
-.#*
 .*.md.html
 .DS_Store
 .classpath
@@ -34,7 +33,6 @@ interpolated*.xml
 lib/
 manifest.yml
 overridedb.*
-settings.xml
 target
 transaction-logs
 .flattened-pom.xml

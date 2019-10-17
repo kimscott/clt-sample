@@ -1,14 +1,10 @@
 /target/
 /bin/
-/.settings/
-*#
 *.iml
 *.ipr
 *.iws
 *.jar
 *.sw?
-*~
-.#*
 .*.md.html
 .DS_Store
 .classpath
@@ -18,7 +14,6 @@
 .metadata
 .project
 .recommenders
-.settings
 .springBeans
 /build
 /code
@@ -34,7 +29,6 @@ interpolated*.xml
 lib/
 manifest.yml
 overridedb.*
-settings.xml
 target
 transaction-logs
 .flattened-pom.xml
