@@ -52,3 +52,46 @@ spring:
 ---
 spring:
   profiles: docker
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8080/.well-known/jwks.json
+  cloud:
+    gateway:
+      routes:
+        - id: market
+          uri: http://f9market:8080
+          predicates:
+            - Path=/market/**
+        - id: product
+          uri: http://f9product:8080
+          predicates:
+            - Path=/product/**
+        - id: inventories
+          uri: http://f9inventory:8080
+          predicates:
+            - Path=/inventories/**
+        - id: finance
+          uri: http://f9finance:8080
+          predicates:
+            - Path=/budget*/**
+        - id: websocket
+          uri: http://f9websocket:8080
+          predicates:
+            - Path=/websocket/**
+        - id: oauth
+          uri: http://f9oauth:8080
+          predicates:
+            - Path=/oauth/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
