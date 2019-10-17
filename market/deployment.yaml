@@ -17,5 +17,6 @@ spec:
       containers:
         - name: _PROJECT_NAME
           image: _REPOSITORY/_PROJECT_NAME:_VERSION
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
