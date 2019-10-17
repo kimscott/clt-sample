@@ -130,8 +130,8 @@ export default {
     slotOffer: function () {
       var me = this
 
-      var url = `${window.API_HOST}/product/slotOffer?username=${me.formData.username}`
-      // var url = `${window.API_HOST}/product/slotOffer/${me.formData.offerId}?username=${me.formData.username}`
+      // var url = `${window.API_HOST}/product/slotOffer?username=${me.formData.username}`
+      var url = `${window.API_HOST}/product/slotOffer/${me.formData.offerId}?username=${me.formData.username}`
       me.$http.get(url, {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem("jwtToken")}`,

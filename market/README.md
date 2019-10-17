@@ -1,3 +1,21 @@
+## 레디스 설치 
+https://redis.io/download
+
+$ wget http://download.redis.io/releases/redis-5.0.5.tar.gz
+$ tar xzf redis-5.0.5.tar.gz
+$ cd redis-5.0.5
+$ make
+
+-- redis run 
+$ src/redis-server
+
+-- redis cli
+$ src/redis-cli
+
+keys *
+get key
+
+
 ## redis 추가
 편의상 controller 에 호출을 하는 방식으로 구현을 하였으나, 바로 메서드를 실행하는 식으로 개발해도 된다.  
 
