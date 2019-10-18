@@ -38,4 +38,5 @@ spring:
     password: ${DATASORUCE_PASSWORD:secretpassword}
     driverClassName: com.mysql.cj.jdbc.Driver
 
-
+server:
+  port: 8080
