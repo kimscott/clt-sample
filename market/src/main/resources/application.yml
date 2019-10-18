@@ -74,3 +74,13 @@ spring:
     username: ${DATASORUCE_USERNAME:root}
     password: ${DATASORUCE_PASSWORD:secretpassword}
     driverClassName: com.mysql.cj.jdbc.Driver
+  redis:
+    host: a6d8706aff08611e99966069ce967329-1927400011.ap-northeast-2.elb.amazonaws.com
+    port: 6379
+    lettuce:
+      pool:
+        max-active: 7
+        max-idle: 7
+        min-idle: 2
+    password: secretpassword
+
