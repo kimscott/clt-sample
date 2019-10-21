@@ -89,8 +89,8 @@ export default {
       items: [],
       items2: [],
       formData: {
-        username: '4@4.com',
-        password: 'password',
+        username: 'USR01',
+        password: '1234',
         isLogin: false,
         message: 'hello',
         offerId: 1
@@ -100,8 +100,8 @@ export default {
   methods: {
     login: function () {
       var me = this
-      var clientID = 'clt-client'
-      var clientSecret = 'clt-secret'
+      var clientID = 'OPUS365-client'
+      var clientSecret = 'OPUS365-secret'
       const clientCredentialBase64 = btoa(clientID + ':' + clientSecret)
       //OAuth 인증을 위한 Body 설정
       const body = `grant_type=password&username=${encodeURIComponent(me.formData.username)}&password=` + encodeURIComponent(me.formData.password)
@@ -145,7 +145,7 @@ export default {
     },
     connect: function () {
       var me = this
-      var socket = new SockJS('http://localhost:8080/websocket')
+      var socket = new SockJS(`${window.API_HOST}/websocket`)
       me.stompClient = Stomp.over(socket)
 
       me.stompClient.connect({
