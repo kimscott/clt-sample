@@ -83,4 +83,8 @@ spring:
         max-idle: 7
         min-idle: 2
     password: secretpassword
-
+  cache:
+    redis:
+      cache-null-values: false
+      use-key-prefix: true
+    type: redis
